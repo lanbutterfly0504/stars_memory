@@ -1,17 +1,290 @@
-<!DOCTYPE html>
-<html lang="zh-tw" data-scribe-reduced-action-queue="true">
-  <head>
-    
-    
-    
-    
-    
-    
-    
-    <meta charset="utf-8">
-      
-      <noscript><meta http-equiv="refresh" content="0; URL=https://mobile.twitter.com/i/nojs_router?path=%2FJanji0504"></noscript>
-      <script  nonce="GTsjsfn0JaNUIe8YfD2P0A==">
-        !function(){window.initErrorstack||(window.initErrorstack=[]),window.onerror=function(r,i,n,o,t){r.indexOf("Script error.")>-1||window.initErrorstack.push({errorMsg:r,url:i,lineNumber:n,column:o,errorObj:t})}}();
-      </script>
-    
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  >
+<head>
+<meta http-equiv="content-type" content="text/html; charset=<%template_charset>">
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="author" content="<%author_name>" />
+<meta name="description" content="<%introduction>" />
+<title><%blog_name><!--not_index_area--> <%sub_title><!--/not_index_area--></title>
+<link rel="stylesheet" type="text/css" href="<%css_link>" media="all" />
+<link rel="alternate" type="application/rss+xml" href="<%url>?xml" title="RSS" />
+<link rel="top" href="<%url>" title="top" />
+<link rel="index" href="<%url>?all" title="インデックス" />
+<!--prevpage--><link rel="prev" href="<%prevpage_url>" title="<%template_prevpage>" /><!--/prevpage-->
+<!--nextpage--><link rel="next" href="<%nextpage_url>" title="<%template_nextpage>" /><!--/nextpage-->
+<!--preventry--><link rel="next" href="<%preventry_url>" title="<%preventry_title>" /><!--/preventry-->
+<!--nextentry--><link rel="prev" href="<%nextentry_url>" title="<%nextentry_title>" /><!--/nextentry-->
+</head>
+<body>
+
+<div id="container">
+
+<div id="main">
+
+	<div id="header">
+		<h1><a href="<%url>" accesskey="0" title="<%blog_name>"><%blog_name></a></h1>
+		<p><%introduction></p>
+	</div><!-- /header -->
+
+
+    <!--not_titlelist_area-->
+    <!--not_search_area-->
+	<!--topentry-->
+	<div class="content">
+		<div class="entry_day"><%topentry_year>-<%topentry_month>-<%topentry_day>(<%topentry_youbi>)</div>
+		<h2 id="e<%topentry_no>" class="entry_header"><!--not_permanent_area--><a href="<%topentry_link>" title=""><!--/not_permanent_area--><%topentry_title><!--not_permanent_area--></a><!--/not_permanent_area--></h2>
+		<div class="entry_body">
+			<%topentry_body>
+			<!--more_link-->
+			<p class="entry_more"><a href="<%topentry_link>#more" title="<%topentry_title>"><%template_extend></a></p>
+			<!--/more_link-->
+			<!--more--><div id="more"><%topentry_more></div>
+			<!--community-->
+			<p class="theme">
+			<%template_theme> : <a href="<%topentry_thread_link>" title="<%topentry_thread_title>"><%topentry_thread_title></a><br />
+			<%template_genre> : <a href="<%topentry_community_janrelink>" title="<%topentry_community_janrename>"><%topentry_community_janrename></a></p>
+			<!--/community-->
+			<!--topentry_tag--><p class="tag_lnk">tag : <%topentry_jointtag></p><!--/topentry_tag--> 
+			<!--/more-->
+		</div>
+		<ul class="entry_footer">
+			<li><a href="<%topentry_category_link>" title="<%template_view_category>"><%topentry_category></a>&nbsp;|&nbsp;</li>
+			<!--allow_comment-->
+			<li><a href="<%topentry_link>#cmf" title=""><%template_comment></a> : <a href="<%topentry_link>#cm" title=""><%topentry_comment_num></a>&nbsp;|&nbsp;</li>
+			<!--/allow_comment-->
+			<!--deny_comment--><!--/deny_comment-->
+			<!--allow_tb-->
+			<li><a href="<%topentry_link>#tb" title=""><%template_trackback> : <%topentry_tb_num></a>&nbsp;|&nbsp;</li>
+			<!--/allow_tb-->
+			<!--deny_tb--><!--/deny_tb-->
+			<li><a href="#container" title="<%template_go_top>">@</a></li>
+		</ul>
+		<!--
+		<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+		         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+		         xmlns:dc="http://purl.org/dc/elements/1.1/">
+		<rdf:Description
+		    rdf:about="<%topentry_link>"
+		    trackback:ping="<%url>tb.php/<%topentry_tb_no>"
+		    dc:title="<%topentry_title>"
+		    dc:identifier="<%topentry_link>"
+		    dc:subject="<%topentry_category>"
+		    dc:description="<%topentry_discription>"
+		    dc:creator="<%author_name>"
+		    dc:date="<%topentry_year>-<%topentry_month>-<%topentry_day>T<%topentry_hour>:<%topentry_minute>:<%topentry_second>+09:00" />
+		</rdf:RDF>
+		-->
+	</div><!--/content-->
+	<!--/topentry-->
+    <!--/not_titlelist_area-->
+    <!--/not_search_area-->
+
+
+	<!--trackback_area-->
+	<div class="page_navi">
+		<!--preventry--><a href="<%preventry_url>" title="<%preventry_title>">&laquo;&nbsp;<%preventry_title></a>&nbsp;|&nbsp;<!--/preventry-->
+		<a href="<%url>" title="<%template_home>"><%template_home></a>
+		<!--nextentry-->&nbsp;|&nbsp;<a href="<%nextentry_url>" title="<%nextentry_title>"><%nextentry_title>&nbsp;&raquo;</a><!--/nextentry-->
+	</div>
+	
+	<div class="content">
+		<p id="tb" class="sub_header">trackback url</p>
+		<p class="trackback_url">
+			<input onfocus="this.select()" value="<%trackback_url>" readonly="readOnly" /><br />
+			<a href="javascript:window.location.replace('http://blog.fc2.com/?url='+window.location.href);" title=""><%template_trackback_this></a>		</p>
+
+		<p id="tb" class="sub_header">trackback</p>
+		<!--trackback-->
+		<h3 id="trackback<%tb_no>" class="sub_title"><a href="<%tb_url>" title="<%tb_title>"><%tb_title></a></h3>
+		<div class="sub_body"><%tb_excerpt></div>
+			<ul class="sub_footer">
+				<li><%tb_year>-<%tb_month>-<%tb_day> <%tb_hour>:<%tb_minute>&nbsp;|&nbsp;</li>
+				<li><%tb_blog_name>&nbsp;|&nbsp;</li>
+				<li><a href="#container" title="<%template_go_top>">@</a></li>
+			</ul>
+			<!--/trackback-->
+	</div>
+	<!--/trackback_area-->
+
+
+	<!--comment_area-->
+	<div class="content">
+		<p id="cmf" class="sub_header"><%template_post_comment></p>
+		<form action="./" method="post" name="comment_form" id="comment_form">
+			<dl class="form">
+				<dt>
+					<input type="hidden" name="mode" value="regist" />
+					<input type="hidden" name="comment[no]" value="<%pno>" />
+					<label for="name"><%template_name></label>
+				</dt>
+				<dd><input id="name" type="text" name="comment[name]" size="30" value="<%cookie_name>" /></dd>
+				<dt><label for="name"><%template_title></label></dt>
+				<dd><input id="subject" name="comment[title]" type="text" size="30" value="No title" onblur="if(this.value == '') this.value='No title';" onfocus="if(this.value == 'No title') this.value='';" /></dd>
+				<dt><label for="mail"><%template_address></label></dt>
+				<dd><input id="mail" type="text" name="comment[mail]" size="30" value="<%cookie_mail>" /></dd>
+				<dt><label for="url">URI</label></dt>
+				<dd><input id="url" type="text" name="comment[url]" size="30" value="<%cookie_url>" /></dd>
+				<dt><label>Font &amp; Icon</label></dt>
+				<dd><script type="text/javascript" src="<%template_comment_js>"></script></dd>
+				<dt><label for="comment"><%template_body></label></dt>
+				<dd><textarea id="comment" cols="50" rows="10" name="comment[body]"></textarea></dd>
+				<dt><label for="pass"><%template_password></label></dt>
+				<dd><input id="pass" type="password" name="comment[pass]" size="20" /></dd>
+				<dt><label for="himitu"><%template_private></label></dt>
+				<dd><input id="himitu" type="checkbox" name="comment[himitu]" /><%template_private_check></dd>
+			</dl>
+			<p class="form_btn"><input type="submit" value="<%template_send>" /></p>
+		</form>
+		<p id="cm" class="sub_header"><%template_comment></p>
+		<!--comment-->
+		<h3 id="comment<%comment_no>" class="sub_title"><%comment_title></h3>
+		<div class="sub_body"><%comment_body></div>
+		<ul class="sub_footer">
+			<li><%comment_year>-<%comment_month>-<%comment_day> <%comment_hour>:<%comment_minute>&nbsp;|&nbsp;</li>
+			<li><%comment_mail+name></li>
+			<li><%comment_url+str>&nbsp;|&nbsp;</li>
+			<li><a href="<%comment_edit_link>" title="<%template_edit_comment>">edit</a>&nbsp;|&nbsp;</li>
+			<li><a href="#container" title="<%template_go_top>">@</a></li>
+		</ul>
+		<!--/comment-->
+	</div>
+	<!--/comment_area-->
+
+
+	<!--edit_area-->
+	<div class="content">
+		<p class="sub_header"><%template_edit_comment></p>
+		<form action="./" method="post" name="comment_form" id="comment_form">
+		<dl class="form">
+			<dt>
+				<input type="hidden" name="mode" value="edit" />
+				<input type="hidden" name="mode2" value="edited" />
+				<input type="hidden" name="edit[rno]" value="<%eno>" />
+				<label for="name"><%template_name></label>
+			</dt>
+			<dd>
+			  <input id="edit[name]" type="text" name="edit[name]" size="30" value="<%edit_name>" />
+			</dd>
+			<dt><label for="name"><%template_title></label></dt>
+			<dd><input id="subject" type="text" name="edit[title]" size="30" value="<%edit_title>" /></dd>
+			<dt><label for="mail"><%template_address></label></dt>
+			<dd><input id="mail" type="text" name="edit[mail]" size="30" value="<%edit_mail>" /></dd>
+			<dt><label for="url">URI</label></dt>
+			<dd><input id="url" type="text" name="edit[url]" size="30" value="<%edit_url>" /></dd>
+			<dt><label>Font &amp; Icon</label></dt>
+			<dd><script type="text/javascript" src="<%template_comment_js>"></script></dd>
+			<dt><label for="comment"><%template_body></label></dt>
+			<dd><textarea id="comment" cols="50" rows="5" name="edit[body]"><%edit_body></textarea></dd>
+			<dt><label for="pass"><%template_password></label></dt>
+			<dd><input id="pass" type="password" name="edit[pass]" size="20" /></dd>
+			<dt><label for="himitu"><%template_private></label></dt>
+			<dd><input id="himitu" type="checkbox" name="edit[himitu]" /><%template_private_check></dd>
+		</dl>
+		<p class="form_btn"><input type="submit" value="<%template_send>" /><input type="submit" name="edit[delete]" value="<%template_delete>" /></p>
+		</form>
+	</div>
+	<!--/edit_area-->
+
+
+    <!--titlelist_area-->
+	<div class="content">
+		<p class="sub_header">title list</p>
+		<!--titlelist-->
+		<div class="list_body">
+			<%titlelist_year>/<%titlelist_month>/<%titlelist_day> : <a href="<%titlelist_category_url>" title="<%template_view_category>"><%titlelist_category></a> : <h2 class="listtitle"><a href="<%titlelist_url>" title="<%titlelist_body>"><%titlelist_title></a></h2>
+		</div>
+		<!--/titlelist-->
+	   	<div class="pagetop"><a href="#container" title="<%template_go_top>">@</a></div>
+	</div>
+    <!--/titlelist_area-->
+
+
+    <!--search_area-->
+	<div class="content">
+		<p class="sub_header">search : <%sub_title></p>
+		<!--topentry-->
+		<div class="list_body">
+			<%topentry_year>/<%topentry_month>/<%topentry_day> : <a href="<%topentry_category_link>" title="<%template_view_category>"><%topentry_category></a> : 
+			<h2 class="listtitle"><a href="<%topentry_link>" title="<%topentry_discription>"><%topentry_title></a></h2>
+		</div>
+        <!--/topentry-->
+	   	<div class="pagetop"><a href="#container" title="<%template_go_top>">@</a></div>
+	</div>
+    <!--/search_area-->
+
+
+	<!--plugin-->
+	<div class="content">
+		<!--plugin_third-->
+		<h3 class="entry_header" style="text-align:<%plugin_third_talign>"><%plugin_third_title></h3>
+		<div class="entry_body">
+			<!--plugin_third_description--><div class="plg_header" style="text-align:<%plugin_third_ialign>"><%plugin_third_description></div><!--/plugin_third_description-->
+			<div class="plg_body" style="text-align:<%plugin_third_align>"><%plugin_third_content></div>
+			<!--plugin_third_description2--><div class="plg_footer" style="text-align:<%plugin_third_ialign>"><%plugin_third_description2></div><!--/plugin_third_description2-->
+		</div>
+		<!--/plugin_third-->
+	</div>
+	<!--/plugin-->
+
+	
+	<div id="footer">
+
+		<div class="page_navi2">
+		<!--not_permanent_area-->
+			<!--prevpage--><a href="<%prevpage_url>" title="<%template_prevpage>">&laquo;&nbsp;<%template_prevpage></a>&nbsp;|&nbsp;<!--/prevpage-->
+			<a href="<%url>" title="<%template_home>"><%template_home></a>
+			<!--nextpage-->&nbsp;|&nbsp;<a href="<%nextpage_url>" title="<%template_nextpage>"><%template_nextpage>&nbsp;&raquo;</a><!--/nextpage-->
+		<!--/not_permanent_area-->
+	
+		<!--permanent_area-->
+			<!--preventry--><a href="<%preventry_url>" title="<%preventry_title>">&laquo;&nbsp;<%preventry_title></a>&nbsp;|&nbsp;<!--/preventry-->
+			<a href="<%url>" title="<%template_home>"><%template_home></a>
+			<!--nextentry-->&nbsp;|&nbsp;<a href="<%nextentry_url>" title="<%nextentry_title>"><%nextentry_title>&nbsp;&raquo;</a><!--/nextentry-->
+		<!--/permanent_area-->
+		</div>
+
+
+		<p>Powered by <a href="http://blog.fc2.com/" title="FC2 BLOG">FC2 Blog</a></p>
+		<p><%ad> <%ad2></p>
+		<address>Copyright &copy; <%blog_name> All Rights Reserved.</address>
+	</div><!-- /footer -->
+</div><!-- /main -->
+
+
+
+  <div id="sidemenu1">
+
+	<!--plugin-->
+	<!--plugin_first-->
+	<dl class="sidemenu_body">
+		<dt class="plg_title" style="text-align:<%plugin_first_talign>"><%plugin_first_title></dt>
+		<!--plugin_first_description--><dd class="plg_header" style="text-align:<%plugin_first_ialign>"><%plugin_first_description></dd><!--/plugin_first_description-->
+		<dd class="plg_body" style="text-align:<%plugin_first_align>"><%plugin_first_content></dd>
+		<!--plugin_first_description2--><dd class="plg_footer" style="text-align:<%plugin_first_ialign>"><%plugin_first_description2></dd><!--/plugin_first_description2-->
+	</dl>
+	<!--/plugin_first--> 
+	<!--/plugin-->
+  </div>
+  <!-- /sidemenu -->
+
+
+
+<div id="sidemenu2">
+
+	<!--plugin-->
+	<!--plugin_second-->
+	<dl class="sidemenu_body">
+		<dt class="plg_title" style="text-align:<%plugin_second_talign>"><%plugin_second_title></dt>
+		<!--plugin_second_description--><dd class="plg_header" style="text-align:<%plugin_second_ialign>"><%plugin_second_description></dd><!--/plugin_second_description-->
+		<dd class="plg_body" style="text-align:<%plugin_second_align>"><%plugin_second_content></dd>
+		<!--plugin_second_description2--><dd class="plg_footer" style="text-align:<%plugin_second_ialign>"><%plugin_second_description2></dd><!--/plugin_second_description2-->
+	</dl>
+	<!--/plugin_second-->
+	<!--/plugin-->
+</div><!-- /sidemenu2 -->
+</div>
+<!-- /container -->
+
+</body>
+</html>
